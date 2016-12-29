@@ -45,9 +45,9 @@ mqtt:
 
 switch:
   - platform: wake_on_lan
-    mac_address: "68-05-CA-18-89-A3"
+    mac_address: !secret joe_desktop_mac
     name: "Joe W-O-L"
-    host: "192.168.1.109"
+    host: !secret joe_desktop_host
 
 automation: !include automation.yaml
 group: !include groups.yaml
