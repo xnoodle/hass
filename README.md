@@ -1,0 +1,1 @@
+# Personal Home Assistant configs

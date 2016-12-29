@@ -1,0 +1,20 @@
+- alias: "Minimote Button 1 Pressed"
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: aeotec_dsa03202_minimote_8
+      scene_id: 1
+  action:
+    service: switch.toggle
+    entity_id: switch.christmas_lights
+- alias: "Minimote Button 1 Pressed"
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: aeotec_dsa03202_minimote_12
+      scene_id: 1
+  action:
+    service: switch.toggle
+    entity_id: switch.christmas_lights

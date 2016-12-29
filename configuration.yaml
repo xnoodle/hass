@@ -1,0 +1,55 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  time_zone: America/New_York
+  unit_system: imperial
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+history:
+logbook:
+sun:
+updater:
+discovery:
+conversation:
+emulated_hue:
+
+device_tracker:
+  - platform: owntracks
+
+http:
+  api_password: !secret http_api_password
+
+wemo:
+  static:
+    - !secret wemo1_host
+
+light:
+  - platform: hue
+    allow_unreachable: true
+    host: !secret hue_host
+
+sensor:
+  - platform: yr
+    monitored_conditions:
+      - temperature
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+switch:
+  - platform: wake_on_lan
+    mac_address: "68-05-CA-18-89-A3"
+    name: "Joe W-O-L"
+    host: "192.168.1.109"
+
+automation: !include automation.yaml
+group: !include groups.yaml
+zone: !include zones.yaml
+zwave: !include zwave.yaml

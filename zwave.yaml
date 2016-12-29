@@ -1,0 +1,12 @@
+  usb_path: /dev/ttyACM0
+  config_path: /srv/hass/src/open-zwave-control-panel/config
+  polling_interval: 60000
+  customize:
+# Manual polling of GE 12727 switch
+    switch.__switch_6_0:
+      polling_intensity: 1
+# Override of delay needed as the bulb takes a few seconds to turn off
+    light.linear_lb60z1_dimmable_led_light_bulb_level_4_0:
+      refresh_value: true
+      delay: 5
+

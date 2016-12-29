@@ -1,0 +1,3 @@
+- name: "Joe's Work" 
+  latitude: !secret joe_work_latitude
+  longitude: !secret joe_work_longitude
