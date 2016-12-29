@@ -18,3 +18,7 @@
       - light.hue_color_lamp_1
       - light.hue_color_lamp_2
       - light.hue_color_lamp_3
+  back_porch_light:
+    name: "Back Porch Light"
+    entities:
+      - switch.ge_12727_inwall_smart_switch_toggle_switch_6_0
