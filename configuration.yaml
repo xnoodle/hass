@@ -19,6 +19,12 @@ emulated_hue:
 
 device_tracker:
   - platform: owntracks
+  - platform: nmap_tracker
+    hosts: 192.168.1.1/24
+  - platform: snmp
+    host: 192.168.1.1
+    community: unicornutopia
+    baseoid: 1.3.6.1.2.1.4.22.1.2
 
 http:
   api_password: !secret http_api_password
@@ -36,6 +42,12 @@ sensor:
   - platform: yr
     monitored_conditions:
       - temperature
+  - platform: template
+    sensors:
+      solar_angle:
+        value_template: '{{ "%+.1f"|format(states.sun.sun.attributes.elevation) }}'
+        friendly_name: 'Sun Angle'
+        unit_of_measurement: '°'
 
 mqtt:
   broker: !secret mqtt_broker
