@@ -1,24 +1,58 @@
-## Groups
-  joe:
-    name: Bedroom
+## groups.yaml
+
+####################
+## Views
+####################
+
+  rooms:
     view: yes
+    name: Rooms
+    entities:
+      - group.j_bedroom
+      - group.basement
+
+  outside:
+    view: yes
+    name: Outside
+    entities:
+      - group.back_porch_light
+
+  automatic:
+    name: "Automation"
+    view: yes
+    entities:
+      - automation.turn_off_light_when_sun_rises
+      - automation.turn_on_light_when_sun_sets
+
+####################
+## Sub groups
+####################
+
+  j_bedroom:
+    name: "Joe's Bedroom"
     entities: 
       - switch.christmas_lights
       - group.joecloset
       - group.joemain
+
   basement:
     name: Basement
+
   joecloset:
     name: "Joe's Closet"
     entities:
       - light.hue_white_lamp_1
       - light.linear_lb60z1_dimmable_led_light_bulb_level_4_0
+
   joemain:
     entities:
       - light.hue_color_lamp_1
       - light.hue_color_lamp_2
       - light.hue_color_lamp_3
+
   back_porch_light:
     name: "Back Porch Light"
     entities:
       - switch.ge_12727_inwall_smart_switch_toggle_switch_6_0
+
+
