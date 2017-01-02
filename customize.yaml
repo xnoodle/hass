@@ -1,2 +1,4 @@
 device_tracker.pi_joes7edge:
   friendly_name: 'Joe'
+group.joemain:
+  entity_picture: /local/hue-a19.jpg

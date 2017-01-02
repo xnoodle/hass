@@ -7,7 +7,6 @@ homeassistant:
   unit_system: imperial
   customize: !include customize.yaml
 
-# Enables the frontend
 frontend:
 history:
 logbook:
@@ -16,6 +15,7 @@ updater:
 discovery:
 conversation:
 emulated_hue:
+  host_ip: !secret homeassistant_ip
 
 device_tracker:
   - platform: owntracks
@@ -39,6 +39,10 @@ light:
     host: !secret hue_host
 
 sensor:
+  - platform: steam_online
+    api_key: !secret steam_api_key
+    accounts:
+      - !secret steam_account_id_1
   - platform: yr
     monitored_conditions:
       - temperature
@@ -63,5 +67,6 @@ switch:
 
 automation: !include automation.yaml
 group: !include groups.yaml
+script: !include scripts.yaml
 zone: !include zones.yaml
 zwave: !include zwave.yaml
