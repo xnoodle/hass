@@ -1,8 +1,9 @@
 ## media_players.yaml
 
 - platform: kodi
-  host: "http://192.168.1.166"
-  username: kodi
-  password: kodi
+  host: !secret firekodi_host
+  username: !secret firekodi_username
+  password: !secret firekodi_password
+
 - platform: mpd
-  host: 192.168.1.231
+  host: !secret mpd_host

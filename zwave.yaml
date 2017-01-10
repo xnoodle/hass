@@ -9,5 +9,3 @@
     light.linear_lb60z1_dimmable_led_light_bulb_level_4_0:
       refresh_value: true
       delay: 5
-    cover.aeotec_dsc14104_micro_motor_controller_level_3_0:
-      polling_intensity: 1
