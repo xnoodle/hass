@@ -1,0 +1,7 @@
+## basement.yaml
+
+basement:
+  name: Basement
+  entities:
+    - media_player.shield
+    - media_player.shield_android_tv

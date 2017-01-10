@@ -5,3 +5,21 @@ restart_ha:
     event_data:
       name: EVENT
       message: "Restarting Home Assistant"
+test_firetv_tts:
+  sequence:
+  - service: tts.google_say
+    entity_id: media_player.mpd
+    data:
+      message: 'May the Force be with you.'
+test_tts:
+  sequence:
+  - service: tts.google_say
+    entity_id: media_player.kodi
+    data:
+      message: 'May the Force be with you.'
+emergency:
+  sequence:
+  - service: light.turn_on
+    entity_id:
+      - group.joemain
+      - group.joecloset

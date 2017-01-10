@@ -1,0 +1,11 @@
+- platform: steam_online
+  api_key: !secret steam_api_key
+  accounts:
+    - !secret steam_account_id_1
+- platform: template
+  sensors:
+    solar_angle:
+      value_template: '{{ "%+.1f"|format(states.sun.sun.attributes.elevation) }}'
+      friendly_name: 'Sun Angle'
+      unit_of_measurement: '°'
+

@@ -2,3 +2,11 @@ device_tracker.pi_joes7edge:
   friendly_name: 'Joe'
 group.joemain:
   entity_picture: /local/hue-a19.jpg
+group.joecloset:
+  entity_picture: /local/hue-white-a19.jpg
+switch.christmas_lights:
+  entity_picture: /local/wemo.jpg
+group.all_automations:
+  hidden: false
+group.all_scripts:
+  hidden: false

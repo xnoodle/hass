@@ -1,0 +1,15 @@
+## security.yaml
+
+back_porch_light:
+  name: "Back Porch Light"
+  entities:
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_6_0
+
+zcombos:
+  name: "Smoke and CO alarms"
+  entities:
+    - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_15_0
+    - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_16_0
+    - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_17_0
+    - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_18_0
+    - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_19_0

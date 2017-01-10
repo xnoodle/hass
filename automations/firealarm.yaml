@@ -1,0 +1,43 @@
+# ZCOMBO 
+# First Alert ZCombo Smoke and Carbon Monoxide Detector Alarm
+- alias: Smoke detected
+  trigger:
+    platform: state
+    entity_id: 
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_15_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_16_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_17_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_18_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_19_0
+    state: '1'
+  action:
+    service: script.turn_on
+    entity_id: script.emergency
+
+- alias: Carbon monoxide detected
+  trigger:
+    platform: state
+    entity_id:
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_15_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_16_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_17_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_18_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_19_0
+    state: '2'
+  action:
+    service: script.turn_on
+    entity_id: script.emergency
+
+- alias: Test button detected
+  trigger:
+    platform: state
+    entity_id:
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_15_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_16_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_17_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_18_0
+      - sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_19_0
+    state: '12'
+  action:
+    service: script.turn_on
+    entity_id: script.emergency

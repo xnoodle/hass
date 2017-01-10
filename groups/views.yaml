@@ -1,0 +1,22 @@
+## views.yaml
+
+rooms:
+  view: yes
+  name: Rooms
+  entities:
+    - group.j_bedroom
+    - group.basement
+
+security:
+  view: yes
+  name: Security
+  entities:
+    - group.back_porch_light
+    - group.zcombos
+
+automatic:
+  name: "Automation"
+  view: yes
+  entities:
+    - group.all_automations
+    - group.all_scripts

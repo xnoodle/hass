@@ -1,0 +1,8 @@
+## media_players.yaml
+
+- platform: kodi
+  host: "http://192.168.1.166"
+  username: kodi
+  password: kodi
+- platform: mpd
+  host: 192.168.1.231

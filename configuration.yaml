@@ -19,12 +19,12 @@ emulated_hue:
 
 device_tracker:
   - platform: owntracks
-  - platform: nmap_tracker
-    hosts: 192.168.1.1/24
+#  - platform: nmap_tracker
+#    hosts: 192.168.1.1/24
   - platform: snmp
-    host: 192.168.1.1
-    community: unicornutopia
-    baseoid: 1.3.6.1.2.1.4.22.1.2
+    host: !secret router_host
+    community: !secret router_snmp_community
+    baseoid: !secret router_snmp_oid
 
 http:
   api_password: !secret http_api_password
@@ -38,35 +38,23 @@ light:
     allow_unreachable: true
     host: !secret hue_host
 
-sensor:
-  - platform: steam_online
-    api_key: !secret steam_api_key
-    accounts:
-      - !secret steam_account_id_1
-  - platform: yr
-    monitored_conditions:
-      - temperature
-  - platform: template
-    sensors:
-      solar_angle:
-        value_template: '{{ "%+.1f"|format(states.sun.sun.attributes.elevation) }}'
-        friendly_name: 'Sun Angle'
-        unit_of_measurement: '°'
-
 mqtt:
   broker: !secret mqtt_broker
   port: !secret mqtt_port
   username: !secret mqtt_username
   password: !secret mqtt_password
 
-switch:
-  - platform: wake_on_lan
-    mac_address: !secret joe_desktop_mac
-    name: "Joe W-O-L"
-    host: !secret joe_desktop_host
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
 
-automation: !include automation.yaml
-group: !include groups.yaml
+automation: !include_dir_merge_list automations/
+group: !include_dir_merge_named groups/
+media_player: !include media_players.yaml
+sensor: !include_dir_merge_list sensors/
 script: !include scripts.yaml
+switch: !include switches.yaml
 zone: !include zones.yaml
 zwave: !include zwave.yaml
