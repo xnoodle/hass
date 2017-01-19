@@ -25,6 +25,10 @@ device_tracker:
     host: !secret router_host
     community: !secret router_snmp_community
     baseoid: !secret router_snmp_oid
+  - platform: unifi
+    host: !secret unifi_host
+    username: !secret unifi_username
+    password: !secret unifi_password
 
 http:
   api_password: !secret http_api_password

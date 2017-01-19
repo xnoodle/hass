@@ -10,3 +10,14 @@ group.all_automations:
   hidden: false
 group.all_scripts:
   hidden: false
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_15_0:
+  friendly_name: 2F smoke detector
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_16_0:
+  friendly_name: 1F smoke detector
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_17_0:
+  friendly_name: Basement smoke detector
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_18_0:
+  friendly_name: Garage basement smoke detector
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_19_0:
+  friendly_name: Misc smoke detector
+
